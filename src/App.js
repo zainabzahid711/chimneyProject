@@ -1,12 +1,11 @@
-// App.js
 import React, { useState } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import Button from "@mui/material/Button";
 import { lightTheme, darkTheme } from "./theme/Theme";
+import NavBar from "./components/navBar/NavBar";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -15,13 +14,7 @@ function App() {
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
-      <div style={{ padding: 20 }}>
-        <Button variant="contained" onClick={toggleTheme}>
-          Toggle Dark Mode
-        </Button>
-        <h1>Hello, World!</h1>
-        <p>This is a sample application to demonstrate dark mode.</p>
-      </div>
+      <NavBar toggleMode={toggleTheme} darkMode={isDarkMode} />
     </ThemeProvider>
   );
 }
