@@ -26,21 +26,21 @@ const BtnDiv = styled(Box)(({ theme }) => ({
 function Hero() {
   const theme = useTheme();
   const isXtraSmall = useMediaQuery(theme.breakpoints.down("xs"));
-  const isSmallerScreen = useMediaQuery(theme.breakpoints.between("xs", "sm"));
+  const isSmallerScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMeduimScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
 
   const getImgWidth = () => {
     if (isXtraSmall) return "250px";
-    if (isSmallerScreen) return "340px";
+    if (isSmallerScreen) return "280px";
     if (isMeduimScreen) return "550px";
-    if (isLargeScreen) return "860px";
+    if (isLargeScreen) return "800px";
     return "860px";
   };
 
   const getTextWidth = () => {
     if (isXtraSmall) return "280px";
-    if (isSmallerScreen) return "350px";
+    if (isSmallerScreen) return "250px";
     if (isMeduimScreen) return "650px";
     if (isLargeScreen) return "850px";
     return "800px";
@@ -49,8 +49,8 @@ function Hero() {
   const getspanWidth = () => {
     if (isXtraSmall) return "280px";
     if (isSmallerScreen) return "245px";
-    if (isMeduimScreen) return "650px";
-    if (isLargeScreen) return "900";
+    if (isMeduimScreen) return "550px";
+    if (isLargeScreen) return "800px";
   };
 
   const textFontSize = () => {

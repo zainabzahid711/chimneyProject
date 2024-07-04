@@ -1,6 +1,7 @@
 import React from "react";
 import { createTheme } from "@mui/material/styles";
 
+// Light theme
 const lightTheme = createTheme({
   palette: {
     mode: "light",
@@ -10,9 +11,14 @@ const lightTheme = createTheme({
     secondary: {
       main: "#dc004e",
     },
+    custom: {
+      sectionOne: "#ffffff", // White for light theme
+      sectionTwo: "#f5f5f5", // Slightly different white for differentiation
+    },
   },
 });
 
+// Dark theme
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -29,6 +35,10 @@ const darkTheme = createTheme({
     text: {
       primary: "#ffffff",
       secondary: "#b3b3b3",
+    },
+    custom: {
+      sectionOne: "#451E37", // Original dark color
+      sectionTwo: "#6A375A", // Suggested dark color
     },
   },
 });
