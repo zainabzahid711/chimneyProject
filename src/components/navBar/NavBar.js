@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import chimneyLogo from "../../assets/svg/ChimneyLogo.svg";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import {
   Box,
   Typography,
@@ -66,14 +66,14 @@ const MenuButton = styled(IconButton)(({ theme }) => ({
   display: "none",
   [theme.breakpoints.down("sm")]: {
     display: "block",
-    display: "flex",
+    // display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
 }));
 
 function NavBar({ darkMode, toggleMode }) {
-  const theme = useTheme();
+  // const theme = useTheme();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = (open) => (event) => {
@@ -123,7 +123,11 @@ function NavBar({ darkMode, toggleMode }) {
             >
               Start Hoisting
             </Typography>
-            <img onClick={toggleMode} src={darkMode ? light : dark} />
+            <img
+              onClick={toggleMode}
+              src={darkMode ? light : dark}
+              alt="darkMode"
+            />
           </NavLinks>
           <MenuButton onClick={toggleDrawer(true)}>
             <Menu />
@@ -148,7 +152,7 @@ function NavBar({ darkMode, toggleMode }) {
               <ListItemText primary="Start Hoisting" />
             </ListItem>
             <ListItem onClick={toggleMode}>
-              <img src={darkMode ? light : dark} />
+              <img src={darkMode ? light : dark} alt="lightMode" />
             </ListItem>
           </List>
         </Box>

@@ -4,7 +4,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { lightTheme, darkTheme } from "./theme/Theme";
 import NavBar from "./components/navBar/NavBar";
 import HomePage from "./pages/homePage/HomePage";
-import StorageToWork from "./components/storageSection/StorageToWork";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);

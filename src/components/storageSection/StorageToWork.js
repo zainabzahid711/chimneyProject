@@ -98,7 +98,11 @@ function StorageToWork() {
               Host a server
             </Button>
           </StorageText>
-          <img style={{ width: ImageWidth() }} src={storageImage} />
+          <img
+            style={{ width: ImageWidth() }}
+            src={storageImage}
+            alt="st-image"
+          />
         </StorageData>
       </StorageSec>
     </>
