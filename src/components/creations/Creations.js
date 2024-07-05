@@ -5,10 +5,11 @@ import absPrivacy from "../../assets/svg/absPrivacy.svg";
 import serverSec from "../../assets/svg/serverSecurity.svg";
 import highSpeed from "../../assets/svg/highSpeed.svg";
 
-const LatestCreations = styled(Box)({
-  background: "#451E37",
+const LatestCreations = styled(Box)(({ theme }) => ({
+  background: theme.palette.custom.sectionOne,
   padding: "60px 0px 0px 0px",
-});
+}));
+
 const TextCenter = styled(Box)({
   padding: "0px 0px 60px 0px",
   display: "flex",
@@ -65,6 +66,27 @@ function Creations() {
     if (isLargeScreen) return "90px";
   };
 
+  const creationData = [
+    {
+      icon: absPrivacy,
+      title: "Absolute Privacy",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab.",
+    },
+    {
+      icon: serverSec,
+      title: "Serverless Security",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab.",
+    },
+    {
+      icon: highSpeed,
+      title: "High Speed",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab.",
+    },
+  ];
+
   return (
     <>
       <LatestCreations>
@@ -77,46 +99,21 @@ function Creations() {
           </Typography>
         </TextCenter>
         <CreationItems>
-          <CreationPerItem>
-            <img style={{ width: getIconWidth() }} src={absPrivacy} />
-            <Typography fontWeight={600}> Absolute Privacy </Typography>
-            <Typography
-              style={{
-                fontSize: descFontSize(),
-                textAlign: "cetner",
-              }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut lab.
-            </Typography>
-          </CreationPerItem>
-          <CreationPerItem>
-            <img style={{ width: getIconWidth() }} src={serverSec} />
-            <Typography fontWeight={600}> Serverless security </Typography>
-            <Typography
-              style={{
-                fontSize: descFontSize(),
-                textAlign: "cetner",
-              }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut lab.
-            </Typography>
-          </CreationPerItem>
-          <CreationPerItem>
-            <img style={{ width: getIconWidth() }} src={highSpeed} />
-            <Typography fontWeight={600}> High Speed </Typography>
-            <Typography
-              variant="caption"
-              style={{
-                fontSize: descFontSize(),
-                textAlign: "cetner",
-              }}
-            >
-              Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt
-              ut lab.
-            </Typography>
-          </CreationPerItem>
+          {creationData.map((item, index) => (
+            <CreationPerItem key={index}>
+              <img
+                style={{ width: getIconWidth() }}
+                src={item.icon}
+                alt={item.title}
+              />
+              <Typography fontWeight={600}> {item.title} </Typography>
+              <Typography
+                style={{ fontSize: descFontSize(), textAlign: "center" }}
+              >
+                {item.description}
+              </Typography>
+            </CreationPerItem>
+          ))}
         </CreationItems>
       </LatestCreations>
     </>

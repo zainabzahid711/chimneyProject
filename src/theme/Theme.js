@@ -12,8 +12,8 @@ const lightTheme = createTheme({
       main: "#dc004e",
     },
     custom: {
-      sectionOne: "#ffffff", // White for light theme
-      sectionTwo: "#f5f5f5", // Slightly different white for differentiation
+      sectionOne: "#f0f0f0", //latest creations section
+      sectionTwo: "#f8f8f8", //storagetowork section
     },
   },
 });
@@ -37,8 +37,8 @@ const darkTheme = createTheme({
       secondary: "#b3b3b3",
     },
     custom: {
-      sectionOne: "#451E37", // Original dark color
-      sectionTwo: "#6A375A", // Suggested dark color
+      sectionOne: "#451E37", // latest creations section
+      sectionTwo: "#6A375A", // storage to work section
     },
   },
 });
