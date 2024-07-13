@@ -1,27 +1,8 @@
-import { styled, useTheme } from "@mui/material/styles";
-import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import heroArt from "../../assets/png/Art.png";
 import React from "react";
-
-const TextArea = styled(Box)({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  marginTop: "40px",
-  textAlign: "center",
-});
-
-const BtnDiv = styled(Box)(({ theme }) => ({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  marginTop: 40,
-  gap: 20,
-  [theme.breakpoints.down("sm")]: {
-    flexDirection: "column",
-  },
-}));
+import { TextArea, BtnDiv } from "../StylesComponent";
 
 function Hero() {
   const theme = useTheme();

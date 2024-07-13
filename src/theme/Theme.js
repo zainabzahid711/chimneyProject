@@ -1,4 +1,3 @@
-// import React from "react";
 import { createTheme } from "@mui/material/styles";
 
 // Light theme
@@ -14,6 +13,8 @@ const lightTheme = createTheme({
     custom: {
       sectionOne: "#f0f0f0", //latest creations section
       sectionTwo: "#f8f8f8", //storagetowork section
+      sectionEarningGrowth: "#f0f0f5", //earning growth section
+      DecentralizationSec: "#f7f7fa", //decentrilzation section
     },
   },
 });
@@ -39,6 +40,8 @@ const darkTheme = createTheme({
     custom: {
       sectionOne: "#451E37", // latest creations section
       sectionTwo: "#6A375A", // storage to work section
+      sectionEarningGrowth: "#400A27", //earning growth section
+      DecentralizationSec: "#5C2A4A", //decentrilzation section
     },
   },
 });
