@@ -4,6 +4,7 @@ import pinkfirst from "../../assets/svg/pinkRec.svg";
 import whiteCircle from "../../assets/svg/whiteRec.svg";
 import blackCircle from "../../assets/svg/purpleRec.svg";
 import GrowthGraph from "../../assets/png/BarChartResponsive.png";
+import { TextGrowthWidth, DescriptionWidth } from "../util";
 import React from "react";
 
 import {
@@ -35,20 +36,6 @@ function EarningGrowth() {
   const isMeduimScreen = useMediaQuery(theme.breakpoints.down("md")); //below 900
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md")); //from 900 to larger
   const isXtraLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
-
-  const TextWidth = () => {
-    if (isSmallerScreen) return "370px";
-    if (isMeduimScreen) return "370px";
-    if (isLargeScreen) return "529px";
-    if (isXtraLargeScreen) return "780px";
-  };
-
-  const DescriptionWidth = () => {
-    if (isSmallerScreen) return "370px";
-    if (isMeduimScreen) return "570px";
-    if (isLargeScreen) return "780px";
-    if (isXtraLargeScreen) return "780px";
-  };
 
   const GrowthCostArray = [
     { circleIcon: pinkfirst, describe: "Total cost" },
@@ -93,7 +80,7 @@ function EarningGrowth() {
         <TextCenter>
           <Typography
             variant={isSmallerScreen ? "h5" : isMeduimScreen ? "h4" : "h3"}
-            style={{ width: TextWidth(), maxWidth: "100%" }}
+            style={{ width: TextGrowthWidth(), maxWidth: "100%" }}
             fontWeight={700}
           >
             Put your capital and your storage to work.

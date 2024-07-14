@@ -161,7 +161,10 @@ export const DecentralizationSec = styled(Box)(({ theme }) => ({
     padding: "100px 10px 40px 50px",
   },
   [theme.breakpoints.down("sm")]: {
-    padding: "30px",
+    padding: "20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 
@@ -181,4 +184,53 @@ export const SourceItemTitle = styled(Box)(({ theme }) => ({
   alignItems: "center",
   gap: "20px",
   marginBottom: "10px",
+}));
+
+//-------faq's--------
+
+export const UserQuestions = styled(Box)(({ theme }) => ({
+  padding: "80px",
+  [theme.breakpoints.down("lg")]: {
+    padding: "70px",
+  },
+  [theme.breakpoints.down("md")]: {
+    padding: "50px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    padding: "45px",
+  },
+}));
+
+export const Network = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  marginTop: 40,
+  gap: 20,
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
+}));
+
+export const PerNetwork = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "center",
+  marginTop: 30,
+  gap: 20,
+  background: "#f1f1f1",
+  color: "black",
+  padding: "30px",
+  width: "313px",
+  maxWidth: "100%",
+
+  [theme.breakpoints.down("md")]: {
+    maxWidth: "100%",
+    padding: "15px",
+    width: "210px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "313px",
+  },
 }));

@@ -3,6 +3,7 @@ import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import storageImage from "../../assets/png/ratingss.png";
 import { TextLeft, StorageContent, StorageData } from "../StylesComponent";
 import React from "react";
+import { TextWidth, ImageWidth } from "../util";
 
 const StorageSec = styled(Box)(({ theme }) => ({
   background: theme.palette.custom.sectionTwo,
@@ -15,6 +16,9 @@ const StorageSec = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("sm")]: {
     padding: "45px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 
@@ -22,21 +26,7 @@ function StorageToWork() {
   const theme = useTheme();
   const isSmallerScreen = useMediaQuery(theme.breakpoints.down("sm")); //below 600
   const isMeduimScreen = useMediaQuery(theme.breakpoints.down("md")); //below 900
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md")); //from 900 to larger
-  const isXtraLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
-
-  const TextWidth = () => {
-    if (isSmallerScreen) return "370px";
-    if (isMeduimScreen) return "370px";
-    if (isLargeScreen) return "492px";
-  };
-
-  const ImageWidth = () => {
-    if (isSmallerScreen) return "290px";
-    if (isMeduimScreen) return "240px";
-    if (isLargeScreen) return "380px";
-    if (isXtraLargeScreen) return "538px";
-  };
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
     <>
@@ -46,14 +36,25 @@ function StorageToWork() {
             <TextLeft>
               <Typography
                 variant={isSmallerScreen ? "h5" : isMeduimScreen ? "h4" : "h3"}
-                style={{ width: TextWidth(), maxWidth: "100%" }}
+                style={{
+                  width: TextWidth(
+                    isSmallerScreen,
+                    isMeduimScreen,
+                    isLargeScreen
+                  ),
+                  maxWidth: "100%",
+                }}
                 fontWeight={700}
               >
                 Put your capital and your storage to work.
               </Typography>
               <Typography
                 style={{
-                  width: TextWidth(),
+                  width: TextWidth(
+                    isSmallerScreen,
+                    isMeduimScreen,
+                    isLargeScreen
+                  ),
                   lineHeight: "30px",
                   maxWidth: "100%",
                 }}
@@ -75,6 +76,7 @@ function StorageToWork() {
               variant="contained"
               sx={{
                 width: "164px",
+                maxWidth: "100%",
                 borderRadius: "8px",
                 backgroundColor: "#B35291",
                 color: "white",
@@ -87,9 +89,12 @@ function StorageToWork() {
             </Button>
           </StorageContent>
           <img
-            style={{ width: ImageWidth() }}
+            style={{
+              width: ImageWidth(isSmallerScreen, isMeduimScreen, isLargeScreen),
+              maxWidth: "100%",
+            }}
             src={storageImage}
-            alt="st-image"
+            alt="st-rankings-image"
           />
         </StorageData>
       </StorageSec>

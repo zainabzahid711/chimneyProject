@@ -27,7 +27,7 @@ function Decentralized() {
   };
 
   const DescriptionWidth = () => {
-    if (isSmallerScreen) return "330px";
+    if (isSmallerScreen) return "300px";
     if (isMeduimScreen) return "470px";
     if (isLargeScreen) return "550px";
   };
@@ -65,7 +65,7 @@ function Decentralized() {
             style={{ width: TextWidth(), maxWidth: "100%" }}
             fontWeight={700}
           >
-            Make Decentralization Possible{" "}
+            Make Decentralization Possible
           </Typography>
           <Typography
             style={{

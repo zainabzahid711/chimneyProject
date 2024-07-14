@@ -3,6 +3,7 @@ import { Button, Typography, useMediaQuery } from "@mui/material";
 import heroArt from "../../assets/png/Art.png";
 import React from "react";
 import { TextArea, BtnDiv } from "../StylesComponent";
+import { getImgWidth, getTextWidth, getspanWidth, textFontSize } from "../util";
 
 function Hero() {
   const theme = useTheme();
@@ -10,36 +11,6 @@ function Hero() {
   const isSmallerScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMeduimScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
-
-  const getImgWidth = () => {
-    if (isXtraSmall) return "250px";
-    if (isSmallerScreen) return "280px";
-    if (isMeduimScreen) return "550px";
-    if (isLargeScreen) return "800px";
-    return "860px";
-  };
-
-  const getTextWidth = () => {
-    if (isXtraSmall) return "280px";
-    if (isSmallerScreen) return "250px";
-    if (isMeduimScreen) return "650px";
-    if (isLargeScreen) return "850px";
-    return "800px";
-  };
-
-  const getspanWidth = () => {
-    if (isXtraSmall) return "280px";
-    if (isSmallerScreen) return "245px";
-    if (isMeduimScreen) return "550px";
-    if (isLargeScreen) return "800px";
-  };
-
-  const textFontSize = () => {
-    if (isXtraSmall) return "12px";
-    if (isSmallerScreen) return "12px";
-    if (isMeduimScreen) return "14px";
-    if (isLargeScreen) return "14px";
-  };
 
   const isDarkMode = theme.palette.mode === "dark";
   return (
@@ -59,7 +30,12 @@ function Hero() {
               : "h2"
           }
           style={{
-            width: getTextWidth(),
+            width: getTextWidth(
+              isXtraSmall,
+              isSmallerScreen,
+              isMeduimScreen,
+              isLargeScreen
+            ),
             fontWeight: 700,
             textAlign: "center",
           }}
@@ -103,7 +79,12 @@ function Hero() {
       <TextArea>
         <Typography
           style={{
-            width: getspanWidth(),
+            width: getspanWidth(
+              isXtraSmall,
+              isSmallerScreen,
+              isMeduimScreen,
+              isLargeScreen
+            ),
             fontSize: textFontSize(),
             textAlign: "cetner",
           }}
@@ -113,7 +94,15 @@ function Hero() {
         </Typography>
         <img
           src={heroArt}
-          style={{ width: getImgWidth(), marginTop: "40px" }}
+          style={{
+            width: getImgWidth(
+              isXtraSmall,
+              isSmallerScreen,
+              isMeduimScreen,
+              isLargeScreen
+            ),
+            marginTop: "40px",
+          }}
           alt="Hero Art"
         />
       </TextArea>
