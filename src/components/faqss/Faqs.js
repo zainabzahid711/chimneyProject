@@ -1,47 +1,23 @@
 import React, { useState } from "react";
-import { styled, useTheme } from "@mui/material/styles";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { Typography, useMediaQuery } from "@mui/material";
 import { TextLeft } from "../StylesComponent";
 import { TextWidth, DescriptionWidth } from "../util";
 import whitePaper from "../../assets/svg/whitePaper.svg";
 import Docs from "../../assets/svg/document.svg";
 import forum from "../../assets/svg/form.svg";
-import { UserQuestions, Network, PerNetwork } from "../StylesComponent";
+import {
+  UserQuestions,
+  Network,
+  PerNetwork,
+  Questions,
+  PerQuestionAns,
+  AnsDiv,
+  QsDiv,
+} from "../StylesComponent";
 import { globalNetworkIcon } from "../util";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-
-const Questions = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  width: "646px",
-  maxWidth: "100%",
-  marginTop: 40,
-  gap: 20,
-}));
-
-const PerQuestionAns = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  marginTop: 20,
-  gap: 10,
-}));
-
-const AnsDiv = styled(Box)(({ theme }) => ({
-  display: "flex",
-  padding: "10px",
-  gap: 10,
-  color: "#666666",
-}));
-
-const QsDiv = styled(Box)(({ theme }) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  borderTop: "1px solid #8B8B8B4D",
-  padding: "10px",
-  gap: 10,
-  cursor: "pointer",
-}));
 
 function Faqs() {
   const [expandState, setExpandState] = useState(null);
@@ -138,6 +114,7 @@ function Faqs() {
                   maxWidth: "100%",
                 }}
                 src={item.image}
+                alt=""
               />
               <Typography fontWeight={600}>{item.mainText} </Typography>
               <Typography

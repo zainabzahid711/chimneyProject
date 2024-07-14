@@ -35,7 +35,6 @@ function EarningGrowth() {
   const isSmallerScreen = useMediaQuery(theme.breakpoints.down("sm")); //below 600
   const isMeduimScreen = useMediaQuery(theme.breakpoints.down("md")); //below 900
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md")); //from 900 to larger
-  const isXtraLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
 
   const GrowthCostArray = [
     { circleIcon: pinkfirst, describe: "Total cost" },
